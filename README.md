@@ -169,6 +169,56 @@ If the internet interface we set up earlier doesn't show up initially just close
 [logo23]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/24.png "Configuring DC"
 
 <h1>Setting Up DHCP Server</h1>
+
+With that done now we need to set up a Dynamic Host Configuration Protocol DHCP Server on our DC. The DHCP will allow the Windows 10 client users to get an IP address to get on the internet despite being on a private network. <br>
+
+As per usual, go back to the server manager, add roles, and select DHCP Server. <br>
+
+![alt text][logo24]
+
+[logo24]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/25.png "Adding DHCP Server"
+
+Next go to tools, dhcp, open the dop down menu for our domain, then right-click IPv4 and select new scope. <br>
+
+![alt text][logo25]
+
+[logo25]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/26.png "Setting Up Scope"
+
+Set the range of IPs to these, and make sure the subnet mask matches the one on our internal NIC for the DC. We're not going to be excluding any IPs. <br>
+
+![alt text][logo26]
+
+[logo26]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/27.png "Setting IP range"
+
+This just sets how long a computer can have this IP address before it needs to be refreshed. For example if you were a cafe and someone joins your network for half and hour and leaves and you had a lease time of 8 days, that IP address would not be usable for 8 days until it refreshed. So use your best judgment on how long leases should last. For this example we'll be keeping it to 1 day. <br>
+
+![alt text][logo27]
+
+[logo27]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/28.png "Setting lease duration"
+
+Tell the DHCP that we want to configure stuff now and go to the next panel. Here we need to add our DC's IP address. Remember to hit Add otherwise it will break things later on in the process. <br>
+
+Then you can go through everything else and finish. <br>
+
+![alt text][logo28]
+
+[logo28]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/29.png "Adding IP addresses"
+
+Then go to the DHCP server and hit authorize to activate everything. Right-click it again and refresh it if you don't see any changes. <br>
+
+![alt text][logo29]
+
+[logo29]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/30.png "Authorizing DHCP Server"
+
 <h1>Creating Users</h1>
+
+With the DHCP now set up we need to tackle adding users to the DC. It would take forever adding over 1000 accounts manually, so we're just going to use a powershell script. <br>
+
+But before we can do that we need to set up a local server and disable IE Advanced security so we can download the file to our desktop without too much trouble. You wouldn't want to do this in a live production environment, however this is a lab. <br>
+
+![alt text][logo30]
+
+[logo30]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/31.png "Disabling IE Advanced Security"
+
 <h1>Setting Up Client Machine</h1>
 <h1>Finishing Up</h1>

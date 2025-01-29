@@ -220,5 +220,61 @@ But before we can do that we need to set up a local server and disable IE Advanc
 
 [logo30]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/31.png "Disabling IE Advanced Security"
 
+Now just copy and paste the link to creating accounts into the browser and download this file. It contains the powershell script and a .txt file of roughly 1000 names. Save it to the desktop and you should be good to go.
+
+![alt text][logo31]
+
+[logo31]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/32.png "Downloading Powershell Script"
+
+You can also open the txt file to add your name into the mix as well to make  a non-admin account for yourself. <br>
+
+![alt text][logo32]
+
+[logo32]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/33.png "names.txt file"
+
+Next we need to boot up powershell so we can run our script properly. <br>
+
+![alt text][logo33]
+
+[logo33]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/34.png "Opening Powershell"
+
+Once powershell is running, clcik the folder to open the create users script. <br>
+
+![alt text][logo34]
+
+[logo34]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/35.png "Opening the Powershell script"
+
+The way this script works is by taking in the names file, breaking each name into the components it needs to fill out the new user info in active directory and generating a username for the person as well. <br>
+
+In a more realistic scenario there would likely be some numbers added as well to ensure people don't have the same username, but this is a lab so we're not going to worry about that. <br>
+
+![alt text][logo35]
+
+[logo35]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/36.png "Powershell script code"
+
+Before we can fully run the script we do need to set the execution policy to unrestricted so that we can actually run our script. Just say yes to all. I wouldn't reccomend doing this in an actual environment but for the sake of our lab we'll do it this way. <br>
+
+![alt text][logo36]
+
+[logo36]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/37.png "Setting execution policy"
+
+We also need to be in the proper directory to run the script so we need to use cd to move into the right area. <br>
+
+![alt text][logo37]
+
+[logo37]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/38.png "Changing directories"
+
+All that's left to do now is hit the green play button and watch as 1000 accounts get added into the active directory. <br>
+
+![alt text][logo38]
+
+[logo38]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/39.png "Adding Users"
+
+You can double check this by opening active directory once more and checking _USERS. You can even locate specific users, such as your own non-admin account! <br>
+
+![alt text][logo39]
+
+[logo39]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/40.png "Checking Users"
+
 <h1>Setting Up Client Machine</h1>
 <h1>Finishing Up</h1>

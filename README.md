@@ -93,6 +93,62 @@ After that we'll rename the PC to DC because it is the domain controller. Then l
 [logo12]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/13.png "Renaming the PC"
 
 <h1>Setting Up Active Directory Domain Services</h1>
+Once back in we will click add roles and features and then add Active Directory Domain Services (AD DS). Then go through the process and install. Do note that it may take a while. <br>
+
+![alt text][logo13]
+
+[logo13]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/14.png "Adding AD DS"
+
+Once it is installed we need to click the warning symbol and promote the server to a domain controller. Then we're going to add a new forest and for this example we will name the domain, mydomain.com. <br>
+
+![alt text][logo14]
+
+[logo14]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/15.png "Deploying domain"
+
+The rest of the process is straightforward so go through the installation process. The VM will restart at the end to properly promote the DC. <br>
+
+![alt text][logo15]
+
+[logo15]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/16.png "Promoting DC"
+
+Once restarted, log in again. Note that the admin account now has the domain in front of it now!
+
+![alt text][logo16]
+
+[logo16]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/17.png "Logging in"
+
+Once logged back in we'll go to Active Directory Users and Computers. <br>
+
+![alt text][logo17]
+
+[logo17]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/18.png "Navigating to Active Directory"
+
+Once here we'll create a new organizational unit (OU) called _ADMINS. They are essentially folders that are used to organize and manage user accounts, computer accounts, printers, and other things. <br>
+
+![alt text][logo18]
+
+[logo18]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/19.png "Adding Organizational Unit"
+
+Now create a new user in this folder. Just give it your name. For the logon name I'm adding a "a-" in front to signify that this is an admin account. <br>
+
+![alt text][logo19]
+
+[logo19]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/20.png "Adding a user"
+
+However, even though the user is in the _ADMINS OU, that does not mean the user is an admin. We need to go into the properties of our new account and make them a member of the Domain Admins. Once done, hit apply then ok. <br>
+
+Now that we have this, sign out of the domain controller. <br>
+
+![alt text][logo20]
+
+[logo20]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/21.png "Promoting a user"
+
+Use your new domain admin account and log in with that. <br>
+
+![alt text][logo21]
+
+[logo21]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/22.png "Logging in"
+
 <h1>Setting Up RAS & NAT</h1>
 <h1>Setting Up DHCP Server</h1>
 <h1>Creating Users</h1>

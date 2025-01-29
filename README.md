@@ -277,4 +277,88 @@ You can double check this by opening active directory once more and checking _US
 [logo39]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/40.png "Checking Users"
 
 <h1>Setting Up Client Machine</h1>
+
+With that done we're in the home stretch. What we need to do now is create our Windows 10 client. We can give it similar specs to the DC. Also do things such as enabling bidirectional in the settings, and set Adapter 1 to internal network. <br>
+
+![alt text][logo40]
+
+[logo40]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/41.png "Creating client machine"
+
+Now if you try to boot this up as is it won't work. You need to grab a Windows 10 64-bit ISO file. Microsoft gives us a downloadable exe that if we run we can create an ISO file. <br>
+
+![alt text][logo41]
+
+[logo41]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/42.png "Creating ISO file"
+
+Finally when you're here, boot up with the windows iso you now have Windows 10 running.
+
+![alt text][logo42]
+
+[logo42]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/43.png "Booting Windows 10"
+
+Click I don't have a product key. <br>
+
+![alt text][logo43]
+
+[logo43]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/44.png "Choosing no poduct key"
+
+Select windows 10 Pro, then go with a custom install. Then just speed through the process and go with no internet and a limited set up. <br>
+
+![alt text][logo44]
+
+[logo44]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/45.png "Choosing Windows version"
+
+After that create a new user and it doesn't need a password. Then you can disable all the unnecessary stuff. <br>
+
+![alt text][logo45]
+
+[logo45]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/46.png "Adding a new user"
+
+Once you log into the client account open up the command line and check if everything is set up properly. If your default gateway matches the DC you should be good. <br>
+
+![alt text][logo46]
+
+[logo46]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/47.png "Checking IP"
+
+You can also go back to the DC to check if the client has a lease! <br>
+
+![alt text][logo47]
+
+[logo47]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/48.png "Checking lease"
+
+Now do a quick test ping to any website. If it works that means that entire infrastructure we have been creating has worked! <br>
+
+![alt text][logo48]
+
+[logo48]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/49.png "Test ping"
+
+Now go to settings, then rename this PC advanced, then change (do not type stuff in the computer description box). <br>
+
+Now we need to add this client to be part of the actual domain. So set the domain to be the same as the DC. Then just log in with your domain admin account and it should be added. <br>
+
+You can also change the PC name here to be something more normal. Then restart to apply the changes. <br>
+
+![alt text][logo49]
+
+[logo49]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/50.png "Changing PC name and adding it to the domain"
+
+Once you do that you can go and check the DHCP to see if the changes were applied. <br>
+
+![alt text][logo50]
+
+[logo50]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/51.png "Checking DHCP"
+
 <h1>Finishing Up</h1>
+
+Now go back to Client1 and see if you can login with one of the user accounts in the active directory.
+
+![alt text][logo51]
+
+[logo51]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/52.png "Logging in with one of the active diectory accounts we made"
+
+Once you log in, do one last check in the command line and that should be it. You've created a VMware network with a domain controller that has around 1000 users and a Windows 10 computer on a private internal network that can access the internet with any one of the accounts in active directory. <br>
+
+![alt text][logo52]
+
+[logo52]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/52.png "Final ping check"
+

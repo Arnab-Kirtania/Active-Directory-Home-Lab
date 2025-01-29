@@ -11,8 +11,8 @@ Create Accounts Script: https://github.com/joshmadakor1/AD_PS... <br>
 <h1>Setting Up the Domain Controller</h1>
 
 <h1>Setting Up Active Directory Domain Services</h1>
-<h1>Setting Up Remote Access Server and Network Address Translation</h1>
-<h1>Setting Up Dynamic Host Configuration Protocol Server</h1>
+<h1>Setting Up RAS & NAT</h1>
+<h1>Setting Up DHCP Server</h1>
 <h1>Creating Users</h1>
 <h1>Setting Up Client Machine</h1>
 <h1>Finishing Up</h1>

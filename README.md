@@ -93,6 +93,7 @@ After that we'll rename the PC to DC because it is the domain controller. Then l
 [logo12]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/13.png "Renaming the PC"
 
 <h1>Setting Up Active Directory Domain Services</h1>
+
 Once back in we will click add roles and features and then add Active Directory Domain Services (AD DS). Then go through the process and install. Do note that it may take a while. <br>
 
 ![alt text][logo13]
@@ -150,6 +151,23 @@ Use your new domain admin account and log in with that. <br>
 [logo21]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/22.png "Logging in"
 
 <h1>Setting Up RAS & NAT</h1>
+
+Now that we are back in we need to install Remote Access Server and Network Address Translation (RAS/NAT). This will allow the future Windows 10 client we'll make to be on a private virtual network but still access the internet through the DC. <br>
+
+We'll do this by going to add roles and then remote access. After that install routing as well. It should show up while going through the installation process. <br>
+
+![alt text][logo22]
+
+[logo22]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/23.png "Adding RAS"
+
+Once that is done, go back to the server manager, go to tools, then routing and remote access, and then configure the DC. Then click NAT and choose the internet interface. Then finish. <br>
+
+If the internet interface we set up earlier doesn't show up initially just close out of the configure window and repeat the steps to get there again. <br>
+
+![alt text][logo23]
+
+[logo23]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/24.png "Configuring DC"
+
 <h1>Setting Up DHCP Server</h1>
 <h1>Creating Users</h1>
 <h1>Setting Up Client Machine</h1>

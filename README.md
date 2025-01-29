@@ -360,5 +360,5 @@ Once you log in, do one last check in the command line and that should be it. Yo
 
 ![alt text][logo52]
 
-[logo52]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/52.png "Final ping check"
+[logo52]: https://github.com/Arnab-Kirtania/Active-Directory-Home-Lab/blob/main/53.png "Final ping check"
 
